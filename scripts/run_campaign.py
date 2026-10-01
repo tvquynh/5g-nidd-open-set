@@ -66,177 +66,14 @@ def _bs_part(train_bs: Optional[int]) -> str:
 # Stage builders
 # ---------------------------------------------------------------------------
 
-def build_grid_jobs(results: Path) -> List[Job]:
-    """Re-run the lightweight classifier grid in the current environment.
-
-    Output goes to ``results/metrics_windows`` rather than ``results/metrics``
-    so that the previously published set stays intact and the two can be
-    compared cell by cell.
-    """
-    out_dir = results / "metrics_windows"
-    jobs: List[Job] = []
-
-    for model in LIGHTWEIGHT_MODELS:
-        for split, train_bs in SPLIT_SETTINGS:
-            for features in FEATURE_SETS:
-                for seed in SEEDS:
-                    out = out_dir / (f"{model}_{split}{_bs_part(train_bs)}"
-                                     f"_{features}_seed{seed}.json")
-                    argv = [
-                        "-m", "src.run_experiment",
-                        "--model", model, "--split", split, "--seed", str(seed),
-                        "--features", features, "--subsample", str(SUBSAMPLE),
-                        "--out", str(out),
-                    ]
-                    if train_bs:
-                        argv += ["--train-bs", str(train_bs)]
-                    jobs.append(Job(out.stem, argv, [out]))
-
-    # The shallow network is the slowest of the lightweight models; it is run
-    # on the full feature set only, matching the published configuration.
-    for split, train_bs in SPLIT_SETTINGS:
-        for seed in SEEDS:
-            out = out_dir / f"mlp_{split}{_bs_part(train_bs)}_full_seed{seed}.json"
-            argv = [
-                "-m", "src.run_experiment",
-                "--model", "mlp", "--split", split, "--seed", str(seed),
-                "--features", "full", "--subsample", str(SUBSAMPLE),
-                "--out", str(out),
-            ]
-            if train_bs:
-                argv += ["--train-bs", str(train_bs)]
-            jobs.append(Job(out.stem, argv, [out]))
-
-    return jobs
 
 
-def build_stacking_jobs(results: Path) -> List[Job]:
-    """Stacked ensembles with every fusion rule evaluated on one base fit.
-
-    Both base sets are run under cross-station shift, where the question of
-    whether fusion can exploit its best member is decided. The in-distribution
-    and mild-shift settings are run with the conventional base set only.
-    """
-    from src.stacking import META_LEARNERS
-
-    out_dir = results / "stacking"
-    plan = [
-        ("cross_station", 1, ["trees_mlp", "diverse"]),
-        ("cross_station", 2, ["trees_mlp", "diverse"]),
-        ("random", None, ["trees_mlp"]),
-        ("temporal", None, ["trees_mlp"]),
-    ]
-
-    jobs: List[Job] = []
-    for split, train_bs, base_sets in plan:
-        for base_set in base_sets:
-            for seed in SEEDS:
-                outputs = [
-                    out_dir / (f"stack_{base_set}_{meta}_{split}{_bs_part(train_bs)}"
-                               f"_full_seed{seed}.json")
-                    for meta in META_LEARNERS
-                ]
-                argv = [
-                    "-m", "src.run_stacking",
-                    "--base-set", base_set, "--split", split, "--seed", str(seed),
-                    "--features", "full", "--subsample", str(SUBSAMPLE),
-                ]
-                if train_bs:
-                    argv += ["--train-bs", str(train_bs)]
-                jobs.append(Job(f"stack_{base_set}_{split}{_bs_part(train_bs)}_seed{seed}",
-                                argv, outputs))
-    return jobs
 
 
-def build_shift_jobs(results: Path) -> List[Job]:
-    """Feature-shift and reliance analysis, both cross-station directions."""
-    out_dir = results / "shift"
-    jobs: List[Job] = []
-    for train_bs in (1, 2):
-        for seed in SEEDS:
-            out = out_dir / f"shift_bs{train_bs}_full_seed{seed}.json"
-            argv = [
-                "-m", "src.run_shift_analysis",
-                "--seed", str(seed), "--train-bs", str(train_bs),
-                "--features", "full", "--subsample", str(SUBSAMPLE),
-                "--models", "lightgbm,xgboost,rf,lr,mlp",
-                "--out", str(out),
-            ]
-            jobs.append(Job(out.stem, argv, [out]))
-    return jobs
 
 
-def build_latency_jobs(results: Path, seeds: Optional[List[int]] = None) -> List[Job]:
-    """Latency, model size, and memory profiles.
-
-    Run with a single worker: the percentiles describe the serving path, and a
-    machine running other jobs would report its own contention instead.
-    """
-    out_dir = results / "latency"
-    seeds = seeds or SEEDS[:5]
-    jobs: List[Job] = []
-
-    for model in LIGHTWEIGHT_MODELS + ["mlp"]:
-        for features in ("full", "top20"):
-            for seed in seeds:
-                out = out_dir / (f"latency_{model}_cross_station_bs1"
-                                 f"_{features}_seed{seed}.json")
-                argv = [
-                    "-m", "src.run_latency",
-                    "--model", model, "--split", "cross_station", "--train-bs", "1",
-                    "--seed", str(seed), "--features", features,
-                    "--subsample", str(SUBSAMPLE), "--out", str(out),
-                ]
-                jobs.append(Job(out.stem, argv, [out]))
-
-    # The stack is profiled on the full feature set only: its serving cost is
-    # the sum of its bases, which the per-model rows already decompose.
-    for seed in seeds:
-        out = out_dir / f"latency_stack_trees_mlp_lr_cross_station_bs1_full_seed{seed}.json"
-        argv = [
-            "-m", "src.run_latency",
-            "--model", "stack", "--stack-base-set", "trees_mlp", "--stack-meta", "lr",
-            "--split", "cross_station", "--train-bs", "1", "--seed", str(seed),
-            "--features", "full", "--subsample", str(SUBSAMPLE), "--out", str(out),
-        ]
-        jobs.append(Job(out.stem, argv, [out]))
-
-    return jobs
 
 
-def build_decomposition_jobs(results: Path) -> List[Job]:
-    """Factorial decomposition of the cross-station degradation.
-
-    The training-side and test-side class compositions are varied
-    independently, plus a same-station control in which only the test priors
-    change. Together with the fully matched cell already produced by the grid
-    stage, this gives the complete two-by-two design in both directions.
-    Full feature set only: the decomposition is about protocol, not about
-    feature budget.
-    """
-    out_dir = results / "decomposition"
-    protocols = [
-        "cross_station_raw_raw",
-        "cross_station_raw_matched",
-        "cross_station_matched_raw",
-        "prior_control",
-    ]
-    models = LIGHTWEIGHT_MODELS + ["mlp"]
-
-    jobs: List[Job] = []
-    for protocol in protocols:
-        for model in models:
-            for train_bs in (1, 2):
-                for seed in SEEDS:
-                    out = out_dir / f"{model}_{protocol}_bs{train_bs}_full_seed{seed}.json"
-                    argv = [
-                        "-m", "src.run_experiment",
-                        "--model", model, "--split", protocol, "--seed", str(seed),
-                        "--features", "full", "--train-bs", str(train_bs),
-                        "--subsample", str(SUBSAMPLE), "--out", str(out),
-                    ]
-                    jobs.append(Job(out.stem, argv, [out]))
-    return jobs
 
 
 def build_openset_jobs(results: Path) -> List[Job]:
@@ -320,15 +157,10 @@ def build_openset_destinations_jobs(results: Path) -> List[Job]:
 
 
 STAGES = {
-    "grid": build_grid_jobs,
-    "decomposition": build_decomposition_jobs,
     "openset": build_openset_jobs,
     "openset_detail": build_openset_detail_jobs,
     "openset_temperature": build_openset_temperature_jobs,
     "openset_destinations": build_openset_destinations_jobs,
-    "stacking": build_stacking_jobs,
-    "shift": build_shift_jobs,
-    "latency": build_latency_jobs,
 }
 
 

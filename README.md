@@ -101,7 +101,7 @@ Python 3.11. CPU only; no GPU is used or required.
 Check the shipped numbers without running anything:
 
 ```bash
-python -m pytest tests/ -q                   # 70 tests over the scoring rules
+python -m pytest tests/ -q                   # 35 tests over the scoring rules
 python scripts/verify_openset_numbers.py     # re-derives every number from results/
 ```
 
@@ -144,7 +144,7 @@ src/
 scripts/
   run_campaign.py                stage driver
   verify_openset_numbers.py      re-derives every numeric claim from results/
-tests/                           unit tests, 26 of them over the scoring rules
+tests/                           unit tests over the scoring rules and splits
 configs/                         paths, model hyperparameters, seeds
 results/                         per-cell records and aggregated tables
 ```
@@ -164,11 +164,12 @@ Aggregated tables sit at the top level of `results/` as `openset_*.csv` and
 
 ## A note on the shared code base
 
-The loader, the splits and the model factories are shared with a separate
-cross-station study by the same group, which lives in its own repository. The
-two studies report no result that depends on the other and share no table or
-figure. This repository carries the full pipeline so that it stands alone, but
-only the result records behind the open-set manuscript.
+The loader, the splits and the model factories were developed alongside a
+separate cross-station study by the same group, which lives in its own
+repository. The two studies report no result that depends on the other and share
+no table or figure. This repository is self-contained: it carries only the
+modules the open-set entry points reach and only the result records behind this
+study, so nothing here has to be read against the other repository.
 
 ## Authors
 
