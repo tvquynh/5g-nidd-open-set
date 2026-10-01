@@ -1,0 +1,19 @@
+{
+  "base_model": "lightgbm",
+  "method": "energy",
+  "seed": 456,
+  "features": "full",
+  "n_features": 89,
+  "n_train": 215675,
+  "n_test": 84325,
+  "threshold_quantile": 0.95,
+  "fit_seconds": 40.405235290527344,
+  "score_seconds": 0.0,
+  "shared_base_fit": true,
+  "macro_f1_open": 0.19721142176713433,
+  "novel_recall": 0.3175122104931464,
+  "false_unknown_rate": 0.08023822047270815,
+  "known_classification_acc": 0.9999815525383707,
+  "macro_f1_known_only": 0.1666651293640179,
+  "threshold": 3.513437941613984e-05
+}

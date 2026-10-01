@@ -1,0 +1,110 @@
+{
+  "wilcoxon_knn_vs_msp": {
+    "lightgbm": {
+      "n_seeds_paired": 10,
+      "knn_f1_mean": 0.21134923715642762,
+      "msp_f1_mean": 0.20187064288290296,
+      "delta_f1": 0.009478594273524654,
+      "wilcoxon_f1_p_one_sided": 0.0419921875,
+      "knn_novel_recall_mean": 0.45743658421301403,
+      "msp_novel_recall_mean": 0.3521916688629944,
+      "delta_novel_recall": 0.10524491535001962,
+      "wilcoxon_novel_recall_p_one_sided": 0.0185546875
+    },
+    "xgboost": {
+      "n_seeds_paired": 10,
+      "knn_f1_mean": 0.2411313118421985,
+      "msp_f1_mean": 0.24038625343230638,
+      "delta_f1": 0.0007450584098921131,
+      "wilcoxon_f1_p_one_sided": 0.615234375,
+      "knn_novel_recall_mean": 0.6541082401134395,
+      "msp_novel_recall_mean": 0.6364621080825587,
+      "delta_novel_recall": 0.017646132030880834,
+      "wilcoxon_novel_recall_p_one_sided": 0.0244140625
+    },
+    "tabnet": {
+      "n_seeds_paired": 5,
+      "knn_f1_mean": 0.23610750354555332,
+      "msp_f1_mean": 0.2071728263076828,
+      "delta_f1": 0.02893467723787052,
+      "wilcoxon_f1_p_one_sided": 0.03125,
+      "knn_novel_recall_mean": 0.612628013234599,
+      "msp_novel_recall_mean": 0.3900898062076572,
+      "delta_novel_recall": 0.22253820702694183,
+      "wilcoxon_novel_recall_p_one_sided": 0.03125
+    },
+    "ftt": {
+      "n_seeds_paired": 5,
+      "knn_f1_mean": 0.24175430013078825,
+      "msp_f1_mean": 0.22147869598140346,
+      "delta_f1": 0.020275604149384785,
+      "wilcoxon_f1_p_one_sided": 0.0625,
+      "knn_novel_recall_mean": 0.6874034977154561,
+      "msp_novel_recall_mean": 0.4236253348038444,
+      "delta_novel_recall": 0.26377816291161166,
+      "wilcoxon_novel_recall_p_one_sided": 0.0625
+    }
+  },
+  "per_class_novel_recall": {
+    "xgboost": {
+      "method": "knn",
+      "seed": 42,
+      "threshold_q": 0.95,
+      "threshold": 3.6517457230160596e-05,
+      "per_class": {
+        "TCPConnectScan": {
+          "n_total": 4947,
+          "n_flagged_unknown": 4947,
+          "novel_recall": 1.0
+        },
+        "SYNFlood": {
+          "n_total": 2399,
+          "n_flagged_unknown": 2399,
+          "novel_recall": 1.0
+        },
+        "SlowrateDoS": {
+          "n_total": 18042,
+          "n_flagged_unknown": 8921,
+          "novel_recall": 0.49445737723090566
+        }
+      }
+    },
+    "lightgbm": {
+      "method": "knn",
+      "seed": 42,
+      "threshold_q": 0.95,
+      "threshold": 1.0504464299055413e-05,
+      "per_class": {
+        "TCPConnectScan": {
+          "n_total": 4947,
+          "n_flagged_unknown": 4931,
+          "novel_recall": 0.9967657165959167
+        },
+        "SYNFlood": {
+          "n_total": 2399,
+          "n_flagged_unknown": 2399,
+          "novel_recall": 1.0
+        },
+        "SlowrateDoS": {
+          "n_total": 18042,
+          "n_flagged_unknown": 2716,
+          "novel_recall": 0.15053763440860216
+        }
+      }
+    }
+  },
+  "latency_benchmark": {
+    "n_test": 84325,
+    "n_train_index": 30000,
+    "n_classes": 9,
+    "base_proba_time_sec": 0.0020399093627929688,
+    "base_proba_throughput_flows_per_sec": 41337620.94436653,
+    "msp_score_time_sec": 0.00644683837890625,
+    "msp_score_throughput_flows_per_sec": 13080054.911242604,
+    "knn_index_build_time_sec": 0.035948991775512695,
+    "knn_score_time_sec": 1.0921673774719238,
+    "knn_score_throughput_flows_per_sec": 77208.86169955917,
+    "msp_overhead_pct_of_base": 316.0355306217859,
+    "knn_overhead_pct_of_base": 53539.995324918185
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "base_model": "xgboost",
+  "method": "mahalanobis",
+  "seed": 42,
+  "features": "full",
+  "n_features": 89,
+  "n_train": 215675,
+  "n_test": 84325,
+  "threshold_quantile": 0.95,
+  "fit_seconds": 49.97284007072449,
+  "score_seconds": 0.5524334907531738,
+  "shared_base_fit": true,
+  "macro_f1_open": 0.21562270129293262,
+  "novel_recall": 0.3793130612887979,
+  "false_unknown_rate": 0.029234606444169198,
+  "known_classification_acc": 1.0,
+  "macro_f1_known_only": 0.16666375367764863,
+  "threshold": 0.001132046869385261
+}

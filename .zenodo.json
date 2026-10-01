@@ -1,0 +1,29 @@
+{
+  "title": "Probability-only open-set rules for 5G intrusion detection: pipeline, per-cell result records, unit tests, and numeric-claim verification",
+  "description": "Reproducibility artifact for the manuscript of the same subject. Contains: (1) the full experimental pipeline for the open-set rejection study on 5G-NIDD, covering four base classifiers (LightGBM, XGBoost, TabNet, FT-Transformer) and four probability-space rejection rules (MSP, energy, Mahalanobis, KNN-OOD); (2) the per-cell result records behind every reported number, one JSON record per experimental cell across the main, per-attack, temperature and destinations campaigns; (3) the aggregated metric tables and campaign logs; (4) a pytest suite covering the scoring rules; (5) verify_openset_numbers.py, which re-derives every numeric claim in the manuscript from the result records so that a stale number fails loudly. The 5G-NIDD dataset itself is distributed by its own authors and is NOT redistributed here; the loader consumes their published Encoded.csv and asserts its row and per-class counts on load.",
+  "notes": "CPU-only runs on a single workstation. The four open-set campaigns total about 27.9 hours of job time across 128 jobs, dominated by FT-Transformer. The repository shares a data loader and a job driver with a separate cross-station study by the same group; neither reports a result that depends on the other.",
+  "keywords": [
+    "open-set recognition",
+    "out-of-distribution detection",
+    "intrusion detection",
+    "evaluation methodology",
+    "5G networks",
+    "5G-NIDD",
+    "reproducibility"
+  ],
+  "creators": [
+    {"name": "Huynh, Trong-Thua", "affiliation": "Posts and Telecommunications Institute of Technology (PTIT), Ho Chi Minh City, Vietnam", "orcid": "0000-0003-3934-1067"},
+    {"name": "Trinh, Van-Quynh", "affiliation": "Posts and Telecommunications Institute of Technology (PTIT), Ho Chi Minh City, Vietnam", "orcid": "0009-0006-0514-6123"},
+    {"name": "Huynh, De-Thu", "affiliation": "The Saigon International University (SIU), Ho Chi Minh City, Vietnam", "orcid": "0000-0002-1227-0281"},
+    {"name": "Nguyen, Phuc", "affiliation": "Faculty of Information Systems, University of Economics and Law, and Vietnam National University, Ho Chi Minh City, Vietnam", "orcid": "0000-0002-6577-0159"}
+  ],
+  "upload_type": "software",
+  "access_right": "open",
+  "license": "MIT",
+  "related_identifiers": [
+    {"identifier": "https://github.com/tvquynh/5g-nidd-open-set", "relation": "isSupplementTo", "scheme": "url"},
+    {"identifier": "10.23729/e80ac9df-d9fb-47e7-8d0d-01384a415361", "relation": "isDerivedFrom", "scheme": "doi"}
+  ],
+  "communities": [],
+  "version": "v1.0.0"
+}

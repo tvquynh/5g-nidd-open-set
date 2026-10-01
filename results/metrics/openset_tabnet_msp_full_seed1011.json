@@ -1,0 +1,16 @@
+{
+  "macro_f1_open": 0.2292093741258616,
+  "novel_recall": 0.4997242791870175,
+  "false_unknown_rate": 0.04184128815514872,
+  "known_classification_acc": 0.999964583591578,
+  "train_time_sec": 243.29466557502747,
+  "threshold": 0.000565946102142334,
+  "n_train": 215675,
+  "n_test": 84325,
+  "n_features": 89,
+  "base_model": "tabnet",
+  "method": "msp",
+  "seed": 1011,
+  "features": "full",
+  "macro_f1_known_only": 0.16665781272134864
+}

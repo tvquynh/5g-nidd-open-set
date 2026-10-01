@@ -1,0 +1,481 @@
+base_model,seed,rule,attack,recall
+ftt,1011,msp,TCPConnectScan,1.0
+ftt,1011,msp,SYNFlood,0.7073780741975824
+ftt,1011,msp,SlowrateDoS,0.08496840705021616
+ftt,1011,msp,Benign (false unknown),0.0012725452601930875
+ftt,1011,energy,TCPConnectScan,1.0
+ftt,1011,energy,SYNFlood,0.7073780741975824
+ftt,1011,energy,SlowrateDoS,0.08496840705021616
+ftt,1011,energy,Benign (false unknown),0.0012725452601930875
+ftt,1011,mahalanobis,TCPConnectScan,0.9995957145744896
+ftt,1011,mahalanobis,SYNFlood,0.7073780741975824
+ftt,1011,mahalanobis,SlowrateDoS,0.00709455714444075
+ftt,1011,mahalanobis,Benign (false unknown),0.0006786908054363134
+ftt,1011,knn,TCPConnectScan,1.0
+ftt,1011,knn,SYNFlood,1.0
+ftt,1011,knn,SlowrateDoS,0.6073606030373573
+ftt,1011,knn,Benign (false unknown),0.0645434955969934
+ftt,123,msp,TCPConnectScan,0.9997978572872448
+ftt,123,msp,SYNFlood,0.9995831596498541
+ftt,123,msp,SlowrateDoS,0.011639507815098104
+ftt,123,msp,Benign (false unknown),0.02553574155454129
+ftt,123,energy,TCPConnectScan,0.9997978572872448
+ftt,123,energy,SYNFlood,0.9995831596498541
+ftt,123,energy,SlowrateDoS,0.011639507815098104
+ftt,123,energy,Benign (false unknown),0.02553574155454129
+ftt,123,mahalanobis,TCPConnectScan,0.9995957145744896
+ftt,123,mahalanobis,SYNFlood,0.9995831596498541
+ftt,123,mahalanobis,SlowrateDoS,0.015907327347300743
+ftt,123,mahalanobis,Benign (false unknown),0.0050392792303646265
+ftt,123,knn,TCPConnectScan,1.0
+ftt,123,knn,SYNFlood,1.0
+ftt,123,knn,SlowrateDoS,0.42395521560802574
+ftt,123,knn,Benign (false unknown),0.0716867163242106
+ftt,42,msp,TCPConnectScan,1.0
+ftt,42,msp,SYNFlood,0.9995831596498541
+ftt,42,msp,SlowrateDoS,0.34026161179470127
+ftt,42,msp,Benign (false unknown),0.010061591190593345
+ftt,42,energy,TCPConnectScan,1.0
+ftt,42,energy,SYNFlood,0.9995831596498541
+ftt,42,energy,SlowrateDoS,0.34026161179470127
+ftt,42,energy,Benign (false unknown),0.010061591190593345
+ftt,42,mahalanobis,TCPConnectScan,1.0
+ftt,42,mahalanobis,SYNFlood,0.7094622759483118
+ftt,42,mahalanobis,SlowrateDoS,0.006207737501385656
+ftt,42,mahalanobis,Benign (false unknown),0.0007465598859799447
+ftt,42,knn,TCPConnectScan,1.0
+ftt,42,knn,SYNFlood,1.0
+ftt,42,knn,SlowrateDoS,0.6274803236891697
+ftt,42,knn,Benign (false unknown),0.06420415019427524
+ftt,456,msp,TCPConnectScan,0.9995957145744896
+ftt,456,msp,SYNFlood,0.9995831596498541
+ftt,456,msp,SlowrateDoS,0.16755348630972175
+ftt,456,msp,Benign (false unknown),0.01747628823998507
+ftt,456,energy,TCPConnectScan,0.9995957145744896
+ftt,456,energy,SYNFlood,0.9995831596498541
+ftt,456,energy,SlowrateDoS,0.16755348630972175
+ftt,456,energy,Benign (false unknown),0.01747628823998507
+ftt,456,mahalanobis,TCPConnectScan,0.9993935718617344
+ftt,456,mahalanobis,SYNFlood,0.9995831596498541
+ftt,456,mahalanobis,SlowrateDoS,0.19825961645050438
+ftt,456,mahalanobis,Benign (false unknown),0.001849432444813954
+ftt,456,knn,TCPConnectScan,1.0
+ftt,456,knn,SYNFlood,1.0
+ftt,456,knn,SlowrateDoS,0.7522447622214832
+ftt,456,knn,Benign (false unknown),0.0599962672005701
+ftt,789,msp,TCPConnectScan,1.0
+ftt,789,msp,SYNFlood,1.0
+ftt,789,msp,SlowrateDoS,0.6101319144219044
+ftt,789,msp,Benign (false unknown),0.024568607156794542
+ftt,789,energy,TCPConnectScan,1.0
+ftt,789,energy,SYNFlood,1.0
+ftt,789,energy,SlowrateDoS,0.6101319144219044
+ftt,789,energy,Benign (false unknown),0.024568607156794542
+ftt,789,mahalanobis,TCPConnectScan,0.9997978572872448
+ftt,789,mahalanobis,SYNFlood,1.0
+ftt,789,mahalanobis,SlowrateDoS,0.005099212947566789
+ftt,789,mahalanobis,Benign (false unknown),0.006464529921780884
+ftt,789,knn,TCPConnectScan,1.0
+ftt,789,knn,SYNFlood,1.0
+ftt,789,knn,SlowrateDoS,0.5149096552488638
+ftt,789,knn,Benign (false unknown),0.10324583877699917
+lightgbm,1011,msp,TCPConnectScan,0.9993935718617344
+lightgbm,1011,msp,SYNFlood,1.0
+lightgbm,1011,msp,SlowrateDoS,0.05780955548165392
+lightgbm,1011,msp,Benign (false unknown),0.09408351290360893
+lightgbm,1011,energy,TCPConnectScan,0.9993935718617344
+lightgbm,1011,energy,SYNFlood,1.0
+lightgbm,1011,energy,SlowrateDoS,0.05780955548165392
+lightgbm,1011,energy,Benign (false unknown),0.09408351290360893
+lightgbm,1011,mahalanobis,TCPConnectScan,0.15261774813017992
+lightgbm,1011,mahalanobis,SYNFlood,0.03167986661108795
+lightgbm,1011,mahalanobis,SlowrateDoS,0.0030484425230018846
+lightgbm,1011,mahalanobis,Benign (false unknown),0.18166856134516518
+lightgbm,1011,knn,TCPConnectScan,1.0
+lightgbm,1011,knn,SYNFlood,1.0
+lightgbm,1011,knn,SlowrateDoS,0.1108524553818867
+lightgbm,1011,knn,Benign (false unknown),0.11873695641108302
+lightgbm,123,msp,TCPConnectScan,0.9896907216494846
+lightgbm,123,msp,SYNFlood,1.0
+lightgbm,123,msp,SlowrateDoS,0.022891032036359605
+lightgbm,123,msp,Benign (false unknown),0.054736413458438674
+lightgbm,123,energy,TCPConnectScan,0.9896907216494846
+lightgbm,123,energy,SYNFlood,1.0
+lightgbm,123,energy,SlowrateDoS,0.022891032036359605
+lightgbm,123,energy,Benign (false unknown),0.054736413458438674
+lightgbm,123,mahalanobis,TCPConnectScan,0.9896907216494846
+lightgbm,123,mahalanobis,SYNFlood,0.9766569403918299
+lightgbm,123,mahalanobis,SlowrateDoS,0.012138343864316595
+lightgbm,123,mahalanobis,Benign (false unknown),0.16515940750292685
+lightgbm,123,knn,TCPConnectScan,1.0
+lightgbm,123,knn,SYNFlood,1.0
+lightgbm,123,knn,SlowrateDoS,0.16938255182352288
+lightgbm,123,knn,Benign (false unknown),0.10283862429373739
+lightgbm,2026,msp,TCPConnectScan,0.9971700020214271
+lightgbm,2026,msp,SYNFlood,1.0
+lightgbm,2026,msp,SlowrateDoS,0.042179359272807894
+lightgbm,2026,msp,Benign (false unknown),0.07737075181973972
+lightgbm,2026,energy,TCPConnectScan,0.9971700020214271
+lightgbm,2026,energy,SYNFlood,1.0
+lightgbm,2026,energy,SlowrateDoS,0.042179359272807894
+lightgbm,2026,energy,Benign (false unknown),0.07737075181973972
+lightgbm,2026,mahalanobis,TCPConnectScan,0.8977157873458662
+lightgbm,2026,mahalanobis,SYNFlood,0.551062942892872
+lightgbm,2026,mahalanobis,SlowrateDoS,0.0028821638399290543
+lightgbm,2026,mahalanobis,Benign (false unknown),0.10933708875579008
+lightgbm,2026,knn,TCPConnectScan,1.0
+lightgbm,2026,knn,SYNFlood,1.0
+lightgbm,2026,knn,SlowrateDoS,0.06490411262609466
+lightgbm,2026,knn,Benign (false unknown),0.11227242648930214
+lightgbm,3141,msp,TCPConnectScan,0.9959571457448959
+lightgbm,3141,msp,SYNFlood,0.9503959983326385
+lightgbm,3141,msp,SlowrateDoS,0.04112626094667997
+lightgbm,3141,msp,Benign (false unknown),0.055890187827680404
+lightgbm,3141,energy,TCPConnectScan,0.9959571457448959
+lightgbm,3141,energy,SYNFlood,0.9503959983326385
+lightgbm,3141,energy,SlowrateDoS,0.04112626094667997
+lightgbm,3141,energy,Benign (false unknown),0.055890187827680404
+lightgbm,3141,mahalanobis,TCPConnectScan,0.9959571457448959
+lightgbm,3141,mahalanobis,SYNFlood,1.0
+lightgbm,3141,mahalanobis,SlowrateDoS,0.006207737501385656
+lightgbm,3141,mahalanobis,Benign (false unknown),0.11422366255493153
+lightgbm,3141,knn,TCPConnectScan,1.0
+lightgbm,3141,knn,SYNFlood,0.9503959983326385
+lightgbm,3141,knn,SlowrateDoS,0.3416472674869748
+lightgbm,3141,knn,Benign (false unknown),0.07662419193375977
+lightgbm,42,msp,TCPConnectScan,0.9963614311704063
+lightgbm,42,msp,SYNFlood,1.0
+lightgbm,42,msp,SlowrateDoS,0.012138343864316595
+lightgbm,42,msp,Benign (false unknown),0.06109913975940411
+lightgbm,42,energy,TCPConnectScan,0.9963614311704063
+lightgbm,42,energy,SYNFlood,1.0
+lightgbm,42,energy,SlowrateDoS,0.012138343864316595
+lightgbm,42,energy,Benign (false unknown),0.06109913975940411
+lightgbm,42,mahalanobis,TCPConnectScan,0.9963614311704063
+lightgbm,42,mahalanobis,SYNFlood,1.0
+lightgbm,42,mahalanobis,SlowrateDoS,0.030539851457709787
+lightgbm,42,mahalanobis,Benign (false unknown),0.17055499940614555
+lightgbm,42,knn,TCPConnectScan,0.9967657165959167
+lightgbm,42,knn,SYNFlood,1.0
+lightgbm,42,knn,SlowrateDoS,0.15053763440860216
+lightgbm,42,knn,Benign (false unknown),0.09841016678826543
+lightgbm,4242,msp,TCPConnectScan,0.9991914291489792
+lightgbm,4242,msp,SYNFlood,0.9941642350979575
+lightgbm,4242,msp,SlowrateDoS,0.10004434098215276
+lightgbm,4242,msp,Benign (false unknown),0.06496767735039109
+lightgbm,4242,energy,TCPConnectScan,0.9991914291489792
+lightgbm,4242,energy,SYNFlood,0.9941642350979575
+lightgbm,4242,energy,SlowrateDoS,0.10004434098215276
+lightgbm,4242,energy,Benign (false unknown),0.06496767735039109
+lightgbm,4242,mahalanobis,TCPConnectScan,0.9967657165959167
+lightgbm,4242,mahalanobis,SYNFlood,1.0
+lightgbm,4242,mahalanobis,SlowrateDoS,0.025385212282452056
+lightgbm,4242,mahalanobis,Benign (false unknown),0.17231959550027995
+lightgbm,4242,knn,TCPConnectScan,1.0
+lightgbm,4242,knn,SYNFlood,1.0
+lightgbm,4242,knn,SlowrateDoS,0.6836825185677863
+lightgbm,4242,knn,Benign (false unknown),0.10523100938290038
+lightgbm,456,msp,TCPConnectScan,0.9995957145744896
+lightgbm,456,msp,SYNFlood,1.0
+lightgbm,456,msp,SlowrateDoS,0.03974060525440638
+lightgbm,456,msp,Benign (false unknown),0.08023822047270815
+lightgbm,456,energy,TCPConnectScan,0.9995957145744896
+lightgbm,456,energy,SYNFlood,1.0
+lightgbm,456,energy,SlowrateDoS,0.03974060525440638
+lightgbm,456,energy,Benign (false unknown),0.08023822047270815
+lightgbm,456,mahalanobis,TCPConnectScan,0.9969678593086719
+lightgbm,456,mahalanobis,SYNFlood,0.8374322634431013
+lightgbm,456,mahalanobis,SlowrateDoS,0.002826737612238111
+lightgbm,456,mahalanobis,Benign (false unknown),0.06479800464903201
+lightgbm,456,knn,TCPConnectScan,1.0
+lightgbm,456,knn,SYNFlood,1.0
+lightgbm,456,knn,SlowrateDoS,0.11916638953552822
+lightgbm,456,knn,Benign (false unknown),0.09496581095067615
+lightgbm,5555,msp,TCPConnectScan,0.997978572872448
+lightgbm,5555,msp,SYNFlood,1.0
+lightgbm,5555,msp,SlowrateDoS,0.0617448176477109
+lightgbm,5555,msp,Benign (false unknown),0.06705465157710776
+lightgbm,5555,energy,TCPConnectScan,0.997978572872448
+lightgbm,5555,energy,SYNFlood,1.0
+lightgbm,5555,energy,SlowrateDoS,0.0617448176477109
+lightgbm,5555,energy,Benign (false unknown),0.06705465157710776
+lightgbm,5555,mahalanobis,TCPConnectScan,0.9965635738831615
+lightgbm,5555,mahalanobis,SYNFlood,0.34472696957065446
+lightgbm,5555,mahalanobis,SlowrateDoS,0.0030484425230018846
+lightgbm,5555,mahalanobis,Benign (false unknown),0.16739908716086668
+lightgbm,5555,knn,TCPConnectScan,1.0
+lightgbm,5555,knn,SYNFlood,1.0
+lightgbm,5555,knn,SlowrateDoS,0.4317148874847578
+lightgbm,5555,knn,Benign (false unknown),0.09316728031626992
+lightgbm,6789,msp,TCPConnectScan,0.9963614311704063
+lightgbm,6789,msp,SYNFlood,1.0
+lightgbm,6789,msp,SlowrateDoS,0.053098326127923735
+lightgbm,6789,msp,Benign (false unknown),0.07893174067224325
+lightgbm,6789,energy,TCPConnectScan,0.9963614311704063
+lightgbm,6789,energy,SYNFlood,1.0
+lightgbm,6789,energy,SlowrateDoS,0.053098326127923735
+lightgbm,6789,energy,Benign (false unknown),0.07893174067224325
+lightgbm,6789,mahalanobis,TCPConnectScan,0.9949464321811199
+lightgbm,6789,mahalanobis,SYNFlood,0.8641100458524386
+lightgbm,6789,mahalanobis,SlowrateDoS,0.0021061966522558473
+lightgbm,6789,mahalanobis,Benign (false unknown),0.11167857203454536
+lightgbm,6789,knn,TCPConnectScan,0.9973721447341823
+lightgbm,6789,knn,SYNFlood,1.0
+lightgbm,6789,knn,SlowrateDoS,0.10209511140671766
+lightgbm,6789,knn,Benign (false unknown),0.10908257970375146
+lightgbm,789,msp,TCPConnectScan,0.9973721447341823
+lightgbm,789,msp,SYNFlood,1.0
+lightgbm,789,msp,SlowrateDoS,0.07222037468129919
+lightgbm,789,msp,Benign (false unknown),0.05694215857610669
+lightgbm,789,energy,TCPConnectScan,0.9973721447341823
+lightgbm,789,energy,SYNFlood,1.0
+lightgbm,789,energy,SlowrateDoS,0.07222037468129919
+lightgbm,789,energy,Benign (false unknown),0.05694215857610669
+lightgbm,789,mahalanobis,TCPConnectScan,0.9975742874469375
+lightgbm,789,mahalanobis,SYNFlood,1.0
+lightgbm,789,mahalanobis,SlowrateDoS,0.03192550714998337
+lightgbm,789,mahalanobis,Benign (false unknown),0.1124251319205253
+lightgbm,789,knn,TCPConnectScan,1.0
+lightgbm,789,knn,SYNFlood,1.0
+lightgbm,789,knn,SlowrateDoS,0.1963751247090123
+lightgbm,789,knn,Benign (false unknown),0.10317796969645554
+tabnet,1011,msp,TCPConnectScan,0.0743885182939155
+tabnet,1011,msp,SYNFlood,0.9995831596498541
+tabnet,1011,msp,SlowrateDoS,0.8413147101208291
+tabnet,1011,msp,Benign (false unknown),0.07748952271069108
+tabnet,1011,energy,TCPConnectScan,0.0743885182939155
+tabnet,1011,energy,SYNFlood,0.9995831596498541
+tabnet,1011,energy,SlowrateDoS,0.8413147101208291
+tabnet,1011,energy,Benign (false unknown),0.07748952271069108
+tabnet,1011,mahalanobis,TCPConnectScan,0.029108550636749546
+tabnet,1011,mahalanobis,SYNFlood,0.9870779491454773
+tabnet,1011,mahalanobis,SlowrateDoS,0.27070169604256733
+tabnet,1011,mahalanobis,Benign (false unknown),0.08806013200536165
+tabnet,1011,knn,TCPConnectScan,0.6163331311906206
+tabnet,1011,knn,SYNFlood,1.0
+tabnet,1011,knn,SlowrateDoS,0.7244207959206297
+tabnet,1011,knn,Benign (false unknown),0.10921831786483872
+tabnet,123,msp,TCPConnectScan,0.9969678593086719
+tabnet,123,msp,SYNFlood,0.9924968736973739
+tabnet,123,msp,SlowrateDoS,0.025551490965524885
+tabnet,123,msp,Benign (false unknown),0.14211785465836402
+tabnet,123,energy,TCPConnectScan,0.9969678593086719
+tabnet,123,energy,SYNFlood,0.9924968736973739
+tabnet,123,energy,SlowrateDoS,0.025551490965524885
+tabnet,123,energy,Benign (false unknown),0.14211785465836402
+tabnet,123,mahalanobis,TCPConnectScan,0.9953507176066303
+tabnet,123,mahalanobis,SYNFlood,0.992080033347228
+tabnet,123,mahalanobis,SlowrateDoS,0.005819753907549052
+tabnet,123,mahalanobis,Benign (false unknown),0.16537998201469364
+tabnet,123,knn,TCPConnectScan,0.9987871437234688
+tabnet,123,knn,SYNFlood,0.9991663192997082
+tabnet,123,knn,SlowrateDoS,0.3977386099102095
+tabnet,123,knn,Benign (false unknown),0.08992653172031152
+tabnet,42,msp,TCPConnectScan,0.9961592884576511
+tabnet,42,msp,SYNFlood,0.9995831596498541
+tabnet,42,msp,SlowrateDoS,0.7942024165835273
+tabnet,42,msp,Benign (false unknown),0.08709299760761491
+tabnet,42,energy,TCPConnectScan,0.9961592884576511
+tabnet,42,energy,SYNFlood,0.9995831596498541
+tabnet,42,energy,SlowrateDoS,0.7942024165835273
+tabnet,42,energy,Benign (false unknown),0.08709299760761491
+tabnet,42,mahalanobis,TCPConnectScan,0.9951485748938751
+tabnet,42,mahalanobis,SYNFlood,0.9995831596498541
+tabnet,42,mahalanobis,SlowrateDoS,0.6044230129697373
+tabnet,42,mahalanobis,Benign (false unknown),0.0786263298097969
+tabnet,42,knn,TCPConnectScan,0.9963614311704063
+tabnet,42,knn,SYNFlood,0.9995831596498541
+tabnet,42,knn,SlowrateDoS,0.849296086908325
+tabnet,42,knn,Benign (false unknown),0.05205558477696524
+tabnet,456,msp,TCPConnectScan,0.19648271679805943
+tabnet,456,msp,SYNFlood,0.7461442267611504
+tabnet,456,msp,SlowrateDoS,0.05481653918634298
+tabnet,456,msp,Benign (false unknown),0.1249639445509612
+tabnet,456,energy,TCPConnectScan,0.19648271679805943
+tabnet,456,energy,SYNFlood,0.7461442267611504
+tabnet,456,energy,SlowrateDoS,0.05481653918634298
+tabnet,456,energy,Benign (false unknown),0.1249639445509612
+tabnet,456,mahalanobis,TCPConnectScan,0.021224984839296544
+tabnet,456,mahalanobis,SYNFlood,0.563151313047103
+tabnet,456,mahalanobis,SlowrateDoS,0.019510032147212062
+tabnet,456,mahalanobis,Benign (false unknown),0.08809406654563347
+tabnet,456,knn,TCPConnectScan,0.9969678593086719
+tabnet,456,knn,SYNFlood,1.0
+tabnet,456,knn,SlowrateDoS,0.33078372685954993
+tabnet,456,knn,Benign (false unknown),0.1035173150991737
+tabnet,789,msp,TCPConnectScan,0.9973721447341823
+tabnet,789,msp,SYNFlood,0.7140475197999167
+tabnet,789,msp,SlowrateDoS,0.15319809333776743
+tabnet,789,msp,Benign (false unknown),0.07757435906137061
+tabnet,789,energy,TCPConnectScan,0.9973721447341823
+tabnet,789,energy,SYNFlood,0.7140475197999167
+tabnet,789,energy,SlowrateDoS,0.15319809333776743
+tabnet,789,energy,Benign (false unknown),0.07757435906137061
+tabnet,789,mahalanobis,TCPConnectScan,0.9969678593086719
+tabnet,789,mahalanobis,SYNFlood,0.7394747811588162
+tabnet,789,mahalanobis,SlowrateDoS,0.09876953774526105
+tabnet,789,mahalanobis,Benign (false unknown),0.09287883672395948
+tabnet,789,knn,TCPConnectScan,0.9975742874469375
+tabnet,789,knn,SYNFlood,0.7140475197999167
+tabnet,789,knn,SlowrateDoS,0.23323356612348964
+tabnet,789,knn,Benign (false unknown),0.056993060386514416
+xgboost,1011,msp,TCPConnectScan,1.0
+xgboost,1011,msp,SYNFlood,1.0
+xgboost,1011,msp,SlowrateDoS,0.4325462809001219
+xgboost,1011,msp,Benign (false unknown),0.049561396066986785
+xgboost,1011,energy,TCPConnectScan,1.0
+xgboost,1011,energy,SYNFlood,1.0
+xgboost,1011,energy,SlowrateDoS,0.4325462809001219
+xgboost,1011,energy,Benign (false unknown),0.049561396066986785
+xgboost,1011,mahalanobis,TCPConnectScan,0.9973721447341823
+xgboost,1011,mahalanobis,SYNFlood,1.0
+xgboost,1011,mahalanobis,SlowrateDoS,0.1581310276022614
+xgboost,1011,mahalanobis,Benign (false unknown),0.02646894141201622
+xgboost,1011,knn,TCPConnectScan,1.0
+xgboost,1011,knn,SYNFlood,1.0
+xgboost,1011,knn,SlowrateDoS,0.44917414920740495
+xgboost,1011,knn,Benign (false unknown),0.06780121146308771
+xgboost,123,msp,TCPConnectScan,1.0
+xgboost,123,msp,SYNFlood,1.0
+xgboost,123,msp,SlowrateDoS,0.45970513246868416
+xgboost,123,msp,Benign (false unknown),0.046863600115377435
+xgboost,123,energy,TCPConnectScan,1.0
+xgboost,123,energy,SYNFlood,1.0
+xgboost,123,energy,SlowrateDoS,0.45970513246868416
+xgboost,123,energy,Benign (false unknown),0.046863600115377435
+xgboost,123,mahalanobis,TCPConnectScan,0.9987871437234688
+xgboost,123,mahalanobis,SYNFlood,1.0
+xgboost,123,mahalanobis,SlowrateDoS,0.19000110852455382
+xgboost,123,mahalanobis,Benign (false unknown),0.022311960228718803
+xgboost,123,knn,TCPConnectScan,1.0
+xgboost,123,knn,SYNFlood,1.0
+xgboost,123,knn,SlowrateDoS,0.5051546391752577
+xgboost,123,knn,Benign (false unknown),0.06766547330200044
+xgboost,2026,msp,TCPConnectScan,1.0
+xgboost,2026,msp,SYNFlood,1.0
+xgboost,2026,msp,SlowrateDoS,0.6441081919964528
+xgboost,2026,msp,Benign (false unknown),0.05376927906069193
+xgboost,2026,energy,TCPConnectScan,1.0
+xgboost,2026,energy,SYNFlood,1.0
+xgboost,2026,energy,SlowrateDoS,0.6441081919964528
+xgboost,2026,energy,Benign (false unknown),0.05376927906069193
+xgboost,2026,mahalanobis,TCPConnectScan,0.993127147766323
+xgboost,2026,mahalanobis,SYNFlood,1.0
+xgboost,2026,mahalanobis,SlowrateDoS,0.36387318479104314
+xgboost,2026,mahalanobis,Benign (false unknown),0.019766869708332628
+xgboost,2026,knn,TCPConnectScan,1.0
+xgboost,2026,knn,SYNFlood,1.0
+xgboost,2026,knn,SlowrateDoS,0.634076044784392
+xgboost,2026,knn,Benign (false unknown),0.06927736396491169
+xgboost,3141,msp,TCPConnectScan,1.0
+xgboost,3141,msp,SYNFlood,1.0
+xgboost,3141,msp,SlowrateDoS,0.4444074936259838
+xgboost,3141,msp,Benign (false unknown),0.04036513565332474
+xgboost,3141,energy,TCPConnectScan,1.0
+xgboost,3141,energy,SYNFlood,1.0
+xgboost,3141,energy,SlowrateDoS,0.4444074936259838
+xgboost,3141,energy,Benign (false unknown),0.04036513565332474
+xgboost,3141,mahalanobis,TCPConnectScan,0.9967657165959167
+xgboost,3141,mahalanobis,SYNFlood,0.8645268862025844
+xgboost,3141,mahalanobis,SlowrateDoS,0.12033034031703803
+xgboost,3141,mahalanobis,Benign (false unknown),0.013997997862123962
+xgboost,3141,knn,TCPConnectScan,1.0
+xgboost,3141,knn,SYNFlood,1.0
+xgboost,3141,knn,SlowrateDoS,0.4455160181798027
+xgboost,3141,knn,Benign (false unknown),0.055211497022244094
+xgboost,42,msp,TCPConnectScan,1.0
+xgboost,42,msp,SYNFlood,1.0
+xgboost,42,msp,SlowrateDoS,0.45017182130584193
+xgboost,42,msp,Benign (false unknown),0.06299947401462579
+xgboost,42,energy,TCPConnectScan,1.0
+xgboost,42,energy,SYNFlood,1.0
+xgboost,42,energy,SlowrateDoS,0.45017182130584193
+xgboost,42,energy,Benign (false unknown),0.06299947401462579
+xgboost,42,mahalanobis,TCPConnectScan,0.9967657165959167
+xgboost,42,mahalanobis,SYNFlood,0.9991663192997082
+xgboost,42,mahalanobis,SlowrateDoS,0.1275911761445516
+xgboost,42,mahalanobis,Benign (false unknown),0.029234606444169198
+xgboost,42,knn,TCPConnectScan,1.0
+xgboost,42,knn,SYNFlood,1.0
+xgboost,42,knn,SlowrateDoS,0.5228356058086686
+xgboost,42,knn,Benign (false unknown),0.0801364168518927
+xgboost,4242,msp,TCPConnectScan,0.9993935718617344
+xgboost,4242,msp,SYNFlood,1.0
+xgboost,4242,msp,SlowrateDoS,0.6158962421017625
+xgboost,4242,msp,Benign (false unknown),0.05086787586745169
+xgboost,4242,energy,TCPConnectScan,0.9993935718617344
+xgboost,4242,energy,SYNFlood,1.0
+xgboost,4242,energy,SlowrateDoS,0.6158962421017625
+xgboost,4242,energy,Benign (false unknown),0.05086787586745169
+xgboost,4242,mahalanobis,TCPConnectScan,0.9975742874469375
+xgboost,4242,mahalanobis,SYNFlood,0.9779074614422676
+xgboost,4242,mahalanobis,SlowrateDoS,0.21837933710231683
+xgboost,4242,mahalanobis,Benign (false unknown),0.026791319544598468
+xgboost,4242,knn,TCPConnectScan,1.0
+xgboost,4242,knn,SYNFlood,1.0
+xgboost,4242,knn,SlowrateDoS,0.6050327014743376
+xgboost,4242,knn,Benign (false unknown),0.06038651441369598
+xgboost,456,msp,TCPConnectScan,1.0
+xgboost,456,msp,SYNFlood,1.0
+xgboost,456,msp,SlowrateDoS,0.4428555592506374
+xgboost,456,msp,Benign (false unknown),0.09842713405840134
+xgboost,456,energy,TCPConnectScan,1.0
+xgboost,456,energy,SYNFlood,1.0
+xgboost,456,energy,SlowrateDoS,0.4428555592506374
+xgboost,456,energy,Benign (false unknown),0.09842713405840134
+xgboost,456,mahalanobis,TCPConnectScan,0.997978572872448
+xgboost,456,mahalanobis,SYNFlood,1.0
+xgboost,456,mahalanobis,SlowrateDoS,0.2012526327458153
+xgboost,456,mahalanobis,Benign (false unknown),0.026129596009298064
+xgboost,456,knn,TCPConnectScan,1.0
+xgboost,456,knn,SYNFlood,1.0
+xgboost,456,knn,SlowrateDoS,0.48098880390200643
+xgboost,456,knn,Benign (false unknown),0.07068564738619204
+xgboost,5555,msp,TCPConnectScan,1.0
+xgboost,5555,msp,SYNFlood,1.0
+xgboost,5555,msp,SlowrateDoS,0.46352954217935927
+xgboost,5555,msp,Benign (false unknown),0.043436211547924056
+xgboost,5555,energy,TCPConnectScan,1.0
+xgboost,5555,energy,SYNFlood,1.0
+xgboost,5555,energy,SlowrateDoS,0.46352954217935927
+xgboost,5555,energy,Benign (false unknown),0.043436211547924056
+xgboost,5555,mahalanobis,TCPConnectScan,0.9971700020214271
+xgboost,5555,mahalanobis,SYNFlood,0.8628595248020008
+xgboost,5555,mahalanobis,SlowrateDoS,0.11983150426781954
+xgboost,5555,mahalanobis,Benign (false unknown),0.06062405619559869
+xgboost,5555,knn,TCPConnectScan,1.0
+xgboost,5555,knn,SYNFlood,1.0
+xgboost,5555,knn,SlowrateDoS,0.49478993459705134
+xgboost,5555,knn,Benign (false unknown),0.05575444966659314
+xgboost,6789,msp,TCPConnectScan,1.0
+xgboost,6789,msp,SYNFlood,1.0
+xgboost,6789,msp,SlowrateDoS,0.5396851790267154
+xgboost,6789,msp,Benign (false unknown),0.0571797003580094
+xgboost,6789,energy,TCPConnectScan,1.0
+xgboost,6789,energy,SYNFlood,1.0
+xgboost,6789,energy,SlowrateDoS,0.5396851790267154
+xgboost,6789,energy,Benign (false unknown),0.0571797003580094
+xgboost,6789,mahalanobis,TCPConnectScan,0.9967657165959167
+xgboost,6789,mahalanobis,SYNFlood,1.0
+xgboost,6789,mahalanobis,SlowrateDoS,0.18157632191553044
+xgboost,6789,mahalanobis,Benign (false unknown),0.02646894141201622
+xgboost,6789,knn,TCPConnectScan,1.0
+xgboost,6789,knn,SYNFlood,1.0
+xgboost,6789,knn,SlowrateDoS,0.5246646713224697
+xgboost,6789,knn,Benign (false unknown),0.0664777643924869
+xgboost,789,msp,TCPConnectScan,0.9995957145744896
+xgboost,789,msp,SYNFlood,1.0
+xgboost,789,msp,SlowrateDoS,0.4977275246646713
+xgboost,789,msp,Benign (false unknown),0.10003902472131258
+xgboost,789,energy,TCPConnectScan,0.9995957145744896
+xgboost,789,energy,SYNFlood,1.0
+xgboost,789,energy,SlowrateDoS,0.4977275246646713
+xgboost,789,energy,Benign (false unknown),0.10003902472131258
+xgboost,789,mahalanobis,TCPConnectScan,0.997978572872448
+xgboost,789,mahalanobis,SYNFlood,1.0
+xgboost,789,mahalanobis,SlowrateDoS,0.23822192661567454
+xgboost,789,mahalanobis,Benign (false unknown),0.025349101583046305
+xgboost,789,knn,TCPConnectScan,1.0
+xgboost,789,knn,SYNFlood,1.0
+xgboost,789,knn,SlowrateDoS,0.5773750138565569
+xgboost,789,knn,Benign (false unknown),0.06766547330200044

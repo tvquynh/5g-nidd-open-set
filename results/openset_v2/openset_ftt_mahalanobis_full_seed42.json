@@ -1,0 +1,19 @@
+{
+  "base_model": "ftt",
+  "method": "mahalanobis",
+  "seed": 42,
+  "features": "full",
+  "n_features": 89,
+  "n_train": 215675,
+  "n_test": 84325,
+  "threshold_quantile": 0.95,
+  "fit_seconds": 5870.857010126114,
+  "score_seconds": 0.43969082832336426,
+  "shared_base_fit": true,
+  "macro_f1_open": 0.2019718016962599,
+  "novel_recall": 0.2663069166535371,
+  "false_unknown_rate": 0.0007465598859799447,
+  "known_classification_acc": 1.0,
+  "macro_f1_known_only": 0.16569041188386227,
+  "threshold": 0.0024371562467558902
+}

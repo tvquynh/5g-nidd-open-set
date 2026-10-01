@@ -1,0 +1,19 @@
+{
+  "base_model": "ftt",
+  "method": "knn",
+  "seed": 123,
+  "features": "full",
+  "n_features": 89,
+  "n_train": 215675,
+  "n_test": 84325,
+  "threshold_quantile": 0.95,
+  "fit_seconds": 5935.457084655762,
+  "score_seconds": 4.685092210769653,
+  "shared_base_fit": true,
+  "macro_f1_open": 0.23358929521777902,
+  "novel_recall": 0.5906333700961084,
+  "false_unknown_rate": 0.0716867163242106,
+  "known_classification_acc": 1.0,
+  "macro_f1_known_only": 0.16666666666666666,
+  "threshold": 5.2560443085474295e-05
+}

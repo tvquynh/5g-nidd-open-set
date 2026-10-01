@@ -1,0 +1,19 @@
+{
+  "base_model": "ftt",
+  "method": "energy",
+  "seed": 789,
+  "features": "full",
+  "n_features": 89,
+  "n_train": 215675,
+  "n_test": 84325,
+  "threshold_quantile": 0.95,
+  "fit_seconds": 5222.001740694046,
+  "score_seconds": 0.009713411331176758,
+  "shared_base_fit": true,
+  "macro_f1_open": 0.2571200619869059,
+  "novel_recall": 0.7229399716401449,
+  "false_unknown_rate": 0.024568607156794542,
+  "known_classification_acc": 0.9999478161039503,
+  "macro_f1_known_only": 0.16666231789519462,
+  "threshold": 0.007656424771994352
+}

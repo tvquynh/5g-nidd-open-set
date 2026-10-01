@@ -1,0 +1,16 @@
+{
+  "macro_f1_open": 0.19369625403091262,
+  "novel_recall": 0.27776902473609577,
+  "false_unknown_rate": 0.06445865924631386,
+  "known_classification_acc": 0.9999818636874751,
+  "train_time_sec": 45.01281189918518,
+  "threshold": 0.0007319056422662569,
+  "n_train": 215675,
+  "n_test": 84325,
+  "n_features": 89,
+  "base_model": "lightgbm",
+  "method": "mahalanobis",
+  "seed": 456,
+  "features": "full",
+  "macro_f1_known_only": 0.16666364394791253
+}

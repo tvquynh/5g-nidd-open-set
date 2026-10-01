@@ -1,0 +1,16 @@
+{
+  "macro_f1_open": 0.23553608973252427,
+  "novel_recall": 0.5816527493303923,
+  "false_unknown_rate": 0.057434209410048016,
+  "known_classification_acc": 1.0,
+  "train_time_sec": 51.331284046173096,
+  "threshold": 0.00018973958503920585,
+  "n_train": 215675,
+  "n_test": 84325,
+  "n_features": 89,
+  "base_model": "xgboost",
+  "method": "energy",
+  "seed": 1011,
+  "features": "full",
+  "macro_f1_known_only": 0.16666666666666666
+}

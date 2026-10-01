@@ -1,0 +1,19 @@
+{
+  "base_model": "tabnet",
+  "method": "knn",
+  "seed": 456,
+  "features": "full",
+  "n_features": 89,
+  "n_train": 215675,
+  "n_test": 84325,
+  "threshold_quantile": 0.95,
+  "fit_seconds": 100.17724633216858,
+  "score_seconds": 5.896495580673218,
+  "shared_base_fit": true,
+  "macro_f1_open": 0.21989183462572384,
+  "novel_recall": 0.5238301559792028,
+  "false_unknown_rate": 0.1035173150991737,
+  "known_classification_acc": 0.999924294041941,
+  "macro_f1_known_only": 0.16666035759801137,
+  "threshold": 0.00021260009689665836
+}

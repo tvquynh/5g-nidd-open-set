@@ -1,0 +1,16 @@
+{
+  "macro_f1_open": 0.2267899131404347,
+  "novel_recall": 0.45545139435953996,
+  "false_unknown_rate": 0.02616353054956988,
+  "known_classification_acc": 1.0,
+  "train_time_sec": 38.65785598754883,
+  "threshold": 0.0007858018800188978,
+  "n_train": 215675,
+  "n_test": 84325,
+  "n_features": 89,
+  "base_model": "xgboost",
+  "method": "mahalanobis",
+  "seed": 789,
+  "features": "full",
+  "macro_f1_known_only": 0.16666666666666666
+}

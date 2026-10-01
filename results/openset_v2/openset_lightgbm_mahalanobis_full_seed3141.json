@@ -1,0 +1,19 @@
+{
+  "base_model": "lightgbm",
+  "method": "mahalanobis",
+  "seed": 3141,
+  "features": "full",
+  "n_features": 89,
+  "n_train": 215675,
+  "n_test": 84325,
+  "threshold_quantile": 0.95,
+  "fit_seconds": 44.935187578201294,
+  "score_seconds": 0.9369761943817139,
+  "shared_base_fit": true,
+  "macro_f1_open": 0.20206666603041018,
+  "novel_recall": 0.29324877895068535,
+  "false_unknown_rate": 0.030490184434226377,
+  "known_classification_acc": 0.9999474973748688,
+  "macro_f1_known_only": 0.16666229133304747,
+  "threshold": 0.0012311547487021436
+}

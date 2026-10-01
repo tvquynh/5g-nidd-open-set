@@ -1,0 +1,16 @@
+{
+  "macro_f1_open": 0.2017882648496291,
+  "novel_recall": 0.3328344099574602,
+  "false_unknown_rate": 0.06705465157710776,
+  "known_classification_acc": 1.0,
+  "train_time_sec": 42.24043130874634,
+  "threshold": 7.543335171785724e-05,
+  "n_train": 215675,
+  "n_test": 84325,
+  "n_features": 89,
+  "base_model": "lightgbm",
+  "method": "energy",
+  "seed": 5555,
+  "features": "full",
+  "macro_f1_known_only": 0.16666666666666666
+}

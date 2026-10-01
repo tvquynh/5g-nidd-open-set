@@ -1,0 +1,19 @@
+{
+  "base_model": "tabnet",
+  "method": "energy",
+  "seed": 789,
+  "features": "full",
+  "n_features": 89,
+  "n_train": 215675,
+  "n_test": 84325,
+  "threshold_quantile": 0.95,
+  "fit_seconds": 200.65193009376526,
+  "score_seconds": 0.0,
+  "shared_base_fit": true,
+  "macro_f1_open": 0.20455903245591056,
+  "novel_recall": 0.3706869387112021,
+  "false_unknown_rate": 0.07757435906137061,
+  "known_classification_acc": 0.9999632116251265,
+  "macro_f1_known_only": 0.16561714572956177,
+  "threshold": 0.0021004308946430683
+}

@@ -1,0 +1,16 @@
+{
+  "macro_f1_open": 0.2625534187569415,
+  "novel_recall": 0.7649677012761935,
+  "false_unknown_rate": 0.017883502723246857,
+  "known_classification_acc": 0.9999654475407287,
+  "train_time_sec": 9801.693316698074,
+  "threshold": 0.007622361183166504,
+  "n_train": 215675,
+  "n_test": 84325,
+  "n_features": 89,
+  "base_model": "ftt",
+  "method": "msp",
+  "seed": 789,
+  "features": "full",
+  "macro_f1_known_only": 0.1666637872453152
+}

@@ -1,0 +1,83 @@
+{
+  "base_model": "lightgbm",
+  "seed": 1011,
+  "features": "full",
+  "threshold_quantile": 0.95,
+  "fit_seconds": 9.586898565292358,
+  "n_train": 215675,
+  "n_test": 84325,
+  "rules": {
+    "msp": {
+      "threshold": 3.5970167211463178e-06,
+      "score_train_range": [
+        0.0,
+        0.4938580659523243
+      ],
+      "score_train_unique": 13585,
+      "flag_rate": 0.1652060480284613,
+      "macro_f1_open": 0.19674261425374176,
+      "novel_recall": 0.3303135339530487,
+      "false_unknown_rate": 0.09408351290360893
+    },
+    "energy_T0.05": {
+      "threshold": 3.597023190426477e-06,
+      "score_train_range": [
+        -4.0000000000000765e-241,
+        0.6580679173619255
+      ],
+      "score_train_unique": 13584,
+      "flag_rate": 0.1652060480284613,
+      "macro_f1_open": 0.19674261425374176,
+      "novel_recall": 0.3303135339530487,
+      "false_unknown_rate": 0.09408351290360893
+    },
+    "energy_T0.1": {
+      "threshold": 3.597023190426477e-06,
+      "score_train_range": [
+        -8.000000000000075e-121,
+        0.6243183790205662
+      ],
+      "score_train_unique": 13584,
+      "flag_rate": 0.1652060480284613,
+      "macro_f1_open": 0.19674261425374176,
+      "novel_recall": 0.3303135339530487,
+      "false_unknown_rate": 0.09408351290360893
+    },
+    "energy_T0.25": {
+      "threshold": 3.5970231904264774e-06,
+      "score_train_range": [
+        -2.0000000000000075e-48,
+        0.5209001092656865
+      ],
+      "score_train_unique": 13584,
+      "flag_rate": 0.1652060480284613,
+      "macro_f1_open": 0.19674261425374176,
+      "novel_recall": 0.3303135339530487,
+      "false_unknown_rate": 0.09408351290360893
+    },
+    "energy_T0.5": {
+      "threshold": 3.5970209098189495e-06,
+      "score_train_range": [
+        -4.000000000000008e-24,
+        0.3477980056515985
+      ],
+      "score_train_unique": 13639,
+      "flag_rate": 0.1652060480284613,
+      "macro_f1_open": 0.19674261425374176,
+      "novel_recall": 0.3303135339530487,
+      "false_unknown_rate": 0.09408351290360893
+    },
+    "energy_T1": {
+      "threshold": -2.9998029728077415e-12,
+      "score_train_range": [
+        -7.999999999968008e-12,
+        -2.977312840712898e-12
+      ],
+      "score_train_unique": 2,
+      "flag_rate": 0.12525348354580493,
+      "macro_f1_open": 0.19190967818020588,
+      "novel_recall": 0.2699700645974476,
+      "false_unknown_rate": 0.06291463766394625
+    }
+  }
+}

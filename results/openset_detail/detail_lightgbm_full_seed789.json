@@ -1,0 +1,147 @@
+{
+  "base_model": "lightgbm",
+  "seed": 789,
+  "features": "full",
+  "fit_seconds": 5.603851318359375,
+  "novel_attack_types": [
+    "TCPConnectScan",
+    "SYNFlood",
+    "SlowrateDoS"
+  ],
+  "per_attack": {
+    "msp": {
+      "TCPConnectScan": 0.9973721447341823,
+      "SYNFlood": 1.0,
+      "SlowrateDoS": 0.07222037468129919,
+      "Benign (false unknown)": 0.05694215857610669
+    },
+    "energy": {
+      "TCPConnectScan": 0.9973721447341823,
+      "SYNFlood": 1.0,
+      "SlowrateDoS": 0.07222037468129919,
+      "Benign (false unknown)": 0.05694215857610669
+    },
+    "mahalanobis": {
+      "TCPConnectScan": 0.9975742874469375,
+      "SYNFlood": 1.0,
+      "SlowrateDoS": 0.03192550714998337,
+      "Benign (false unknown)": 0.1124251319205253
+    },
+    "knn": {
+      "TCPConnectScan": 1.0,
+      "SYNFlood": 1.0,
+      "SlowrateDoS": 0.1963751247090123,
+      "Benign (false unknown)": 0.10317796969645554
+    }
+  },
+  "threshold_sweep": {
+    "msp": {
+      "0.90": {
+        "macro_f1_open": 0.21790316858904882,
+        "novel_recall": 0.44127146683472507,
+        "false_unknown_rate": 0.0615063542426659
+      },
+      "0.93": {
+        "macro_f1_open": 0.21790316858904882,
+        "novel_recall": 0.44127146683472507,
+        "false_unknown_rate": 0.0615063542426659
+      },
+      "0.95": {
+        "macro_f1_open": 0.20466713563680974,
+        "novel_recall": 0.34016070584528124,
+        "false_unknown_rate": 0.05694215857610669
+      },
+      "0.97": {
+        "macro_f1_open": 0.20057104908653628,
+        "novel_recall": 0.3061682684732945,
+        "false_unknown_rate": 0.05066426862582079
+      },
+      "0.99": {
+        "macro_f1_open": 0.20315486795956783,
+        "novel_recall": 0.2989995273357492,
+        "false_unknown_rate": 0.02962485365729508
+      }
+    },
+    "energy": {
+      "0.90": {
+        "macro_f1_open": 0.21790316858904882,
+        "novel_recall": 0.44127146683472507,
+        "false_unknown_rate": 0.0615063542426659
+      },
+      "0.93": {
+        "macro_f1_open": 0.21790316858904882,
+        "novel_recall": 0.44127146683472507,
+        "false_unknown_rate": 0.0615063542426659
+      },
+      "0.95": {
+        "macro_f1_open": 0.20466713563680974,
+        "novel_recall": 0.34016070584528124,
+        "false_unknown_rate": 0.05694215857610669
+      },
+      "0.97": {
+        "macro_f1_open": 0.20057104908653628,
+        "novel_recall": 0.3061682684732945,
+        "false_unknown_rate": 0.05066426862582079
+      },
+      "0.99": {
+        "macro_f1_open": 0.20315486795956783,
+        "novel_recall": 0.2989995273357492,
+        "false_unknown_rate": 0.02962485365729508
+      }
+    },
+    "mahalanobis": {
+      "0.90": {
+        "macro_f1_open": 0.16275197722333198,
+        "novel_recall": 0.31156451867023793,
+        "false_unknown_rate": 0.2948063186113986
+      },
+      "0.93": {
+        "macro_f1_open": 0.18438145459876035,
+        "novel_recall": 0.31156451867023793,
+        "false_unknown_rate": 0.15328231840779136
+      },
+      "0.95": {
+        "macro_f1_open": 0.19095059436313372,
+        "novel_recall": 0.31156451867023793,
+        "false_unknown_rate": 0.1124251319205253
+      },
+      "0.97": {
+        "macro_f1_open": 0.20371524513870876,
+        "novel_recall": 0.31156451867023793,
+        "false_unknown_rate": 0.03780307786280265
+      },
+      "0.99": {
+        "macro_f1_open": 0.20714379127910093,
+        "novel_recall": 0.31109185441941073,
+        "false_unknown_rate": 0.018596128068954988
+      }
+    },
+    "knn": {
+      "0.90": {
+        "macro_f1_open": 0.2369966383627125,
+        "novel_recall": 0.8307861982038759,
+        "false_unknown_rate": 0.16619441098121723
+      },
+      "0.93": {
+        "macro_f1_open": 0.21016176544248744,
+        "novel_recall": 0.46195052780841345,
+        "false_unknown_rate": 0.1167517858051818
+      },
+      "0.95": {
+        "macro_f1_open": 0.2085351699497026,
+        "novel_recall": 0.428903418938081,
+        "false_unknown_rate": 0.10317796969645554
+      },
+      "0.97": {
+        "macro_f1_open": 0.20909233288336848,
+        "novel_recall": 0.3900661729951158,
+        "false_unknown_rate": 0.07199212718665694
+      },
+      "0.99": {
+        "macro_f1_open": 0.2071359900470525,
+        "novel_recall": 0.31357334173625334,
+        "false_unknown_rate": 0.02083580772689482
+      }
+    }
+  }
+}

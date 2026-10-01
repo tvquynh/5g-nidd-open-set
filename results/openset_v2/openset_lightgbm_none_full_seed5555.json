@@ -1,0 +1,19 @@
+{
+  "base_model": "lightgbm",
+  "method": "none",
+  "seed": 5555,
+  "features": "full",
+  "n_features": 89,
+  "n_train": 215675,
+  "n_test": 84325,
+  "threshold_quantile": 0.95,
+  "fit_seconds": 43.70897674560547,
+  "score_seconds": 0.0,
+  "shared_base_fit": true,
+  "macro_f1_open": 0.1413699853444768,
+  "novel_recall": 0.0,
+  "false_unknown_rate": 0.0,
+  "known_classification_acc": 0.9992025383036124,
+  "macro_f1_known_only": 0.1649316495685563,
+  "threshold": Infinity
+}

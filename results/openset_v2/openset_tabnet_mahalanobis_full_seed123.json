@@ -1,0 +1,19 @@
+{
+  "base_model": "tabnet",
+  "method": "mahalanobis",
+  "seed": 123,
+  "features": "full",
+  "n_features": 89,
+  "n_train": 215675,
+  "n_test": 84325,
+  "threshold_quantile": 0.95,
+  "fit_seconds": 304.1307518482208,
+  "score_seconds": 0.2749006748199463,
+  "shared_base_fit": true,
+  "macro_f1_open": 0.179736319297391,
+  "novel_recall": 0.29183078619820385,
+  "false_unknown_rate": 0.16537998201469364,
+  "known_classification_acc": 1.0,
+  "macro_f1_known_only": 0.16666666666666666,
+  "threshold": 0.011163947797682223
+}

@@ -1,0 +1,19 @@
+{
+  "base_model": "xgboost",
+  "method": "msp",
+  "seed": 5555,
+  "features": "full",
+  "n_features": 89,
+  "n_train": 215675,
+  "n_test": 84325,
+  "threshold_quantile": 0.95,
+  "fit_seconds": 46.95416307449341,
+  "score_seconds": 0.0,
+  "shared_base_fit": true,
+  "macro_f1_open": 0.24249360614760823,
+  "novel_recall": 0.6187568930203245,
+  "false_unknown_rate": 0.043436211547924056,
+  "known_classification_acc": 1.0,
+  "macro_f1_known_only": 0.16666666666666666,
+  "threshold": 0.00020998716354370117
+}
