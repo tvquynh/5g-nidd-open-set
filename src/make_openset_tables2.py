@@ -325,7 +325,7 @@ def table_per_attack_destinations(records: list, out: Path) -> None:
             label = f"\\textbf{{{label}}}"
         lines.append(
             f"{label} & {r.trained:.3f} & {r.benign:.3f} & "
-            f"{CLASS_LABELS[modal[attack]]} ({r.modal_share:.2f}) & "
+            f"{CLASS_LABELS[modal[attack]]} ({r.modal_share:.3f}) & "
             f"{r.confidence:.3f} \\\\")
     lines += [r"\bottomrule", r"\end{tabular}"]
     _write(out, "\n".join(lines) + "\n")
