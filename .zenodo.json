@@ -12,18 +12,42 @@
     "reproducibility"
   ],
   "creators": [
-    {"name": "Huynh, Trong-Thua", "affiliation": "Posts and Telecommunications Institute of Technology (PTIT), Ho Chi Minh City, Vietnam", "orcid": "0000-0003-3934-1067"},
-    {"name": "Trinh, Van-Quynh", "affiliation": "Posts and Telecommunications Institute of Technology (PTIT), Ho Chi Minh City, Vietnam", "orcid": "0009-0006-0514-6123"},
-    {"name": "Huynh, De-Thu", "affiliation": "The Saigon International University (SIU), Ho Chi Minh City, Vietnam", "orcid": "0000-0002-1227-0281"},
-    {"name": "Nguyen, Phuc", "affiliation": "Faculty of Information Systems, University of Economics and Law, and Vietnam National University, Ho Chi Minh City, Vietnam", "orcid": "0000-0002-6577-0159"}
+    {
+      "name": "Huynh, Trong-Thua",
+      "affiliation": "Posts and Telecommunications Institute of Technology (PTIT), Ho Chi Minh City, Vietnam",
+      "orcid": "0000-0003-3934-1067"
+    },
+    {
+      "name": "Trinh, Van-Quynh",
+      "affiliation": "Posts and Telecommunications Institute of Technology (PTIT), Ho Chi Minh City, Vietnam",
+      "orcid": "0009-0006-0514-6123"
+    },
+    {
+      "name": "Huynh, De-Thu",
+      "affiliation": "The Saigon International University (SIU), Ho Chi Minh City, Vietnam",
+      "orcid": "0000-0002-1227-0281"
+    },
+    {
+      "name": "Nguyen, Phuc",
+      "affiliation": "Faculty of Information Systems, University of Economics and Law, and Vietnam National University, Ho Chi Minh City, Vietnam",
+      "orcid": "0000-0002-6577-0159"
+    }
   ],
   "upload_type": "software",
   "access_right": "open",
   "license": "MIT",
   "related_identifiers": [
-    {"identifier": "https://github.com/tvquynh/5g-nidd-open-set", "relation": "isSupplementTo", "scheme": "url"},
-    {"identifier": "10.23729/e80ac9df-d9fb-47e7-8d0d-01384a415361", "relation": "isDerivedFrom", "scheme": "doi"}
+    {
+      "identifier": "https://github.com/tvquynh/5g-nidd-open-set",
+      "relation": "isSupplementTo",
+      "scheme": "url"
+    },
+    {
+      "identifier": "10.23729/e80ac9df-d9fb-47e7-8d0d-01384a415361",
+      "relation": "isDerivedFrom",
+      "scheme": "doi"
+    }
   ],
   "communities": [],
-  "version": "v1.0.0"
+  "version": "v1.0.2"
 }
