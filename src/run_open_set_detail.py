@@ -76,7 +76,7 @@ def main() -> None:
     print(f"{args.base} seed {args.seed}: fitting once for "
           f"{len(SCORING_RULES)} rules x {len(QUANTILES)} operating points")
     t0 = time.time()
-    proba_train, proba_test = fit_and_predict(
+    proba_train, proba_test, class_order = fit_and_predict(
         args.base, X_train, y_train, X_test, num_classes, args.seed)
     fit_seconds = time.time() - t0
     print(f"  fitted in {fit_seconds:.1f}s")
@@ -90,7 +90,8 @@ def main() -> None:
     for rule in SCORING_RULES:
         # Per-attack rejectability at the default operating point.
         result = detect_open_set(rule, proba_test, proba_train=proba_train,
-                                 y_train=y_train, threshold_quantile=0.95)
+                                 y_train=y_train, threshold_quantile=0.95,
+                                 class_order=class_order)
         flagged = result.pred == UNKNOWN_LABEL
         record["per_attack"][rule] = {
             name: float(np.mean(flagged[y_test == cls_to_idx[name]]))
@@ -105,7 +106,8 @@ def main() -> None:
         sweep = {}
         for q in QUANTILES:
             r = detect_open_set(rule, proba_test, proba_train=proba_train,
-                                y_train=y_train, threshold_quantile=q)
+                                y_train=y_train, threshold_quantile=q,
+                                class_order=class_order)
             metrics = open_set_metrics(y_test_open, r.pred, known_classes,
                                        unknown_label_in_truth=UNKNOWN_LABEL)
             sweep[f"{q:.2f}"] = {

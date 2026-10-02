@@ -150,7 +150,8 @@ def _mahalanobis_score(proba_test: np.ndarray, proba_train: np.ndarray,
 def detect_open_set(method: str, proba_test: np.ndarray,
                     proba_train: np.ndarray = None, y_train: np.ndarray = None,
                     threshold_quantile: float = 0.95,
-                    threshold: float = None) -> OpenSetResult:
+                    threshold: float = None,
+                    class_order=None) -> OpenSetResult:
     """Compute OOD scores + flag unknowns.
 
     Args:
@@ -194,7 +195,9 @@ def detect_open_set(method: str, proba_test: np.ndarray,
     else:
         raise ValueError(f"Unknown open-set method: {method}")
 
-    pred = np.argmax(proba_test, axis=1)
+    # Column index is not the class code for every base; see fit_and_predict.
+    col = np.argmax(proba_test, axis=1)
+    pred = (np.asarray(class_order)[col] if class_order is not None else col)
     unknown_mask = score_test > threshold
     pred[unknown_mask] = UNKNOWN_LABEL
     return OpenSetResult(pred=pred, proba=proba_test, scores=score_test,

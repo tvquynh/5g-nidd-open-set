@@ -2,7 +2,7 @@
   "base_model": "tabnet",
   "seed": 123,
   "features": "full",
-  "fit_seconds": 191.13332962989807,
+  "fit_seconds": 157.72802901268005,
   "novel_attack_types": [
     "TCPConnectScan",
     "SYNFlood",

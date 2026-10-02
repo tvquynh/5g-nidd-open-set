@@ -2,7 +2,7 @@
   "base_model": "tabnet",
   "seed": 123,
   "features": "full",
-  "fit_seconds": 210.34671092033386,
+  "fit_seconds": 135.82394313812256,
   "n_train": 215675,
   "n_test": 84325,
   "n_novel": 25388,
@@ -15,9 +15,9 @@
   "novel_destination_counts": {
     "Benign": 708,
     "HTTPFlood": 18007,
-    "SYNFlood": 1414,
-    "SYNScan": 5255,
-    "SlowrateDoS": 4
+    "SYNScan": 1414,
+    "UDPFlood": 5255,
+    "UDPScan": 4
   },
   "novel_to_benign": 708,
   "novel_to_benign_rate": 0.027887190798802582,
@@ -29,9 +29,9 @@
       "counts": {
         "Benign": 24,
         "HTTPFlood": 15,
-        "SYNFlood": 3,
-        "SYNScan": 4901,
-        "SlowrateDoS": 4
+        "SYNScan": 3,
+        "UDPFlood": 4901,
+        "UDPScan": 4
       },
       "confidence": {
         "mean": 0.9821107387542725,
@@ -52,8 +52,8 @@
       "counts": {
         "Benign": 682,
         "HTTPFlood": 7,
-        "SYNFlood": 1356,
-        "SYNScan": 354
+        "SYNScan": 1356,
+        "UDPFlood": 354
       },
       "confidence": {
         "mean": 0.9232811331748962,
@@ -74,7 +74,7 @@
       "counts": {
         "Benign": 2,
         "HTTPFlood": 17985,
-        "SYNFlood": 55
+        "SYNScan": 55
       },
       "confidence": {
         "mean": 0.9990062117576599,

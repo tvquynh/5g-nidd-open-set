@@ -32,28 +32,44 @@ BASES = ("lightgbm", "xgboost", "tabnet", "ftt")
 
 
 def fit_and_predict(base: str, X_train, y_train, X_test, num_classes: int, seed: int):
-    """Fit the base classifier once and return train and test probabilities."""
+    """Fit the base classifier once; return train and test probabilities and the
+    global class code of each probability column.
+
+    The column order is not the same for every base. LightGBM, XGBoost and the
+    FT-Transformer are given num_classes and emit one column per global code, so
+    their column j is class j. TabNet fits its own label encoder and emits one
+    column per class seen in training; with the held-out split those codes are
+    [0, 1, 2, 4, 7, 8], so its column 3 is class 4, not class 3. Any caller that
+    takes argmax over the columns must translate through class_order before
+    treating the result as a label.
+    """
     if base == "lightgbm":
         from src.models import fit_lightgbm
         model = fit_lightgbm(X_train, y_train, num_classes=num_classes, seed=seed)
-        return model.predict(X_train), model.predict(X_test)
+        order = np.arange(num_classes)
+        return model.predict(X_train), model.predict(X_test), order
 
     if base == "xgboost":
         import xgboost as xgb
         from src.models import fit_xgboost
         model = fit_xgboost(X_train, y_train, num_classes=num_classes, seed=seed)
-        return model.predict(xgb.DMatrix(X_train)), model.predict(xgb.DMatrix(X_test))
+        order = np.arange(num_classes)
+        return (model.predict(xgb.DMatrix(X_train)),
+                model.predict(xgb.DMatrix(X_test)), order)
 
     if base == "tabnet":
         from src.deep_models import fit_tabnet, predict_tabnet
         model = fit_tabnet(X_train, y_train, num_classes=num_classes, seed=seed)
-        return predict_tabnet(model, X_train)[1], predict_tabnet(model, X_test)[1]
+        order = np.asarray(model[0].classes_).astype(int)
+        return (predict_tabnet(model, X_train)[1],
+                predict_tabnet(model, X_test)[1], order)
 
     if base == "ftt":
         from src.deep_models import fit_fttransformer, predict_fttransformer
         model = fit_fttransformer(X_train, y_train, num_classes=num_classes, seed=seed)
+        order = np.arange(num_classes)
         return (predict_fttransformer(model, X_train)[1],
-                predict_fttransformer(model, X_test)[1])
+                predict_fttransformer(model, X_test)[1], order)
 
     raise ValueError(f"unknown base classifier: {base}")
 
@@ -104,10 +120,11 @@ def main() -> None:
 
     print(f"Fitting {args.base} once for all {len(METHODS)} rules...")
     t0 = time.time()
-    proba_train, proba_test = fit_and_predict(
+    proba_train, proba_test, class_order = fit_and_predict(
         args.base, X_train, y_train, X_test, num_classes, args.seed)
     fit_seconds = time.time() - t0
     print(f"  fitted in {fit_seconds:.1f}s")
+    print(f"  probability columns -> class codes: {list(class_order)}")
 
     out_dir = Path(args.out_dir) if args.out_dir else Path(paths["results"]) / "openset_v2"
     out_dir.mkdir(parents=True, exist_ok=True)
@@ -117,12 +134,13 @@ def main() -> None:
     for method in METHODS:
         t0 = time.time()
         if method == "none":
-            pred = np.argmax(proba_test, axis=1)
+            pred = class_order[np.argmax(proba_test, axis=1)]
             threshold = float("inf")
         else:
             result = detect_open_set(method, proba_test, proba_train=proba_train,
                                      y_train=y_train,
-                                     threshold_quantile=args.threshold_quantile)
+                                     threshold_quantile=args.threshold_quantile,
+                                     class_order=class_order)
             pred, threshold = result.pred, float(result.threshold)
         score_seconds = time.time() - t0
 

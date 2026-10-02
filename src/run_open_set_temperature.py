@@ -94,7 +94,7 @@ def main() -> None:
     print(f"{args.base} seed {args.seed}: one fit, "
           f"{len(TEMPERATURES)} temperatures plus MSP")
     t0 = time.time()
-    proba_train, proba_test = fit_and_predict(
+    proba_train, proba_test, class_order = fit_and_predict(
         args.base, X_train, y_train, X_test, num_classes, args.seed)
     fit_seconds = time.time() - t0
 
@@ -105,7 +105,7 @@ def main() -> None:
 
     def score_and_flag(name: str, s_train: np.ndarray, s_test: np.ndarray) -> None:
         threshold = float(np.quantile(s_train, args.threshold_quantile))
-        pred = np.argmax(proba_test, axis=1)
+        pred = class_order[np.argmax(proba_test, axis=1)]
         pred[s_test > threshold] = UNKNOWN_LABEL
         metrics = open_set_metrics(y_test_open, pred, known_classes,
                                    unknown_label_in_truth=UNKNOWN_LABEL)

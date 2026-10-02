@@ -90,12 +90,15 @@ def main() -> None:
 
     print(f"{args.base} seed {args.seed}: one fit, destination and confidence census")
     t0 = time.time()
-    proba_train, proba_test = fit_and_predict(
+    proba_train, proba_test, class_order = fit_and_predict(
         args.base, X_train, y_train, X_test, num_classes, args.seed)
     fit_seconds = time.time() - t0
     print(f"  fitted in {fit_seconds:.1f}s")
 
-    pred = np.argmax(proba_test, axis=1)
+    # Column index is not the class code for every base: TabNet emits one
+    # column per training class, so its column 3 is class 4. Translating
+    # through class_order is what keeps the destination census honest.
+    pred = class_order[np.argmax(proba_test, axis=1)]
     novel_mask = np.isin(y_test, list(novel_indices))
     known_mask = ~novel_mask
     n_novel = int(novel_mask.sum())

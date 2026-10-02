@@ -3,7 +3,7 @@
   "seed": 789,
   "features": "full",
   "threshold_quantile": 0.95,
-  "fit_seconds": 147.37540364265442,
+  "fit_seconds": 156.68814086914062,
   "n_train": 215675,
   "n_test": 84325,
   "rules": {

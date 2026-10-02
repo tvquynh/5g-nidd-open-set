@@ -205,7 +205,7 @@ def main() -> int:
                                     "conf_novel", "conf_known",
                                     "novel_above"]].mean()
 
-    check.equal("novel flows given a known attack label, lowest base", 0.770,
+    check.equal("novel flows given a known attack label, lowest base", 0.878,
                 by_base.trained.min(), tol=5e-4)
     check.equal("novel flows given a known attack label, highest base", 0.953,
                 by_base.trained.max(), tol=5e-4)
@@ -213,15 +213,14 @@ def main() -> int:
                 by_base.benign.min(), tol=5e-4)
     check.equal("novel flows called benign, highest base", 0.122,
                 by_base.benign.max(), tol=5e-4)
-    check.equal("only TabNet uses the untrained slots", "tabnet",
-                by_base.untrained.idxmax())
-    check.equal("TabNet untrained-slot share", 0.108,
-                by_base.untrained.max(), tol=5e-4)
-    tabnet_seeds = dest[dest.base == "tabnet"].untrained
-    check.equal("TabNet untrained-slot share, worst seed", 0.259,
-                tabnet_seeds.max(), tol=5e-4)
-    check.equal("the other three bases never use them", 0.0,
-                by_base.untrained.drop("tabnet").max(), tol=1e-9)
+    # No base places a novel flow on an output slot that carried no training
+    # data. An earlier version of the pipeline appeared to show TabNet doing so;
+    # that was a column-index-as-class-code defect, fixed, and pinned by
+    # tests/test_class_order.py. These checks exist so it cannot come back.
+    check.equal("no base uses the untrained slots, worst base", 0.0,
+                by_base.untrained.max(), tol=1e-9)
+    check.equal("no base uses the untrained slots, worst seed", 0.0,
+                dest.untrained.max(), tol=1e-9)
 
     check.equal("confidence on novel flows, lowest base", 0.943,
                 by_base.conf_novel.min(), tol=5e-4)

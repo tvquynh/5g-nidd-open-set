@@ -54,14 +54,40 @@ def fit_tabnet(X_train, y_train, X_val=None, y_val=None,
         num_workers=0,
         drop_last=False,
     )
-    return (model, scaler)
+    return (model, scaler, num_classes)
 
 
 def predict_tabnet(packed, X):
-    model, scaler = packed
+    """Predict with TabNet, in the global class-code space.
+
+    TabNetClassifier fits its own label encoder, so predict_proba returns one
+    column per class actually seen in training, ordered by model.classes_. When
+    the training labels are not 0..K-1 -- and here they are [0, 1, 2, 4, 7, 8],
+    because the global codes are assigned alphabetically over all nine classes
+    and three of them are held out -- the column index is NOT the class code.
+    Taking argmax over the columns and using it as a label silently renames
+    every class from column 3 on.
+
+    The other base classifiers are given num_classes and emit a column per
+    global code, so their argmax is already a class code. This function returns
+    the predicted label in that same global space, while leaving the probability
+    matrix in the model's own compact column space.
+    """
+    model, scaler, _num_classes = packed
     X_s = scaler.transform(X).astype(np.float32)
     proba = model.predict_proba(X_s)
-    pred = np.argmax(proba, axis=1)
+    class_order = np.asarray(model.classes_).astype(int)
+
+    # argmax indexes the model's own columns; translate it to the global code.
+    pred = class_order[np.argmax(proba, axis=1)]
+
+    # The matrix is returned exactly as the model produced it, with one column
+    # per training class. It is deliberately NOT widened to the global class
+    # space: the scoring rules read this matrix, and padding absent classes with
+    # zeros would change the simplex dimension that Mahalanobis fits its
+    # covariance on and would add terms to the unit-temperature energy sum. That
+    # is a different experiment. The dimensional difference against the other
+    # bases is a property of this comparison and is reported as such.
     return pred, proba
 
 

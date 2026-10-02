@@ -7,7 +7,7 @@
   "n_train": 215675,
   "n_test": 84325,
   "threshold_quantile": 0.95,
-  "fit_seconds": 544.1300337314606,
+  "fit_seconds": 201.15239882469177,
   "score_seconds": 0.0,
   "shared_base_fit": true,
   "macro_f1_open": 0.13442573205886815,
